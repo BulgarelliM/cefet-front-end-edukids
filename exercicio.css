@@ -1,15 +1,18 @@
-/* Exercício 1: Criar uma transição para quando o mouse estiver em cima dos
- * botões play/stop (para que o elemento se revele lentamente)
- */
 #controles ul {
   list-style-type: none;
   padding: 0;
   transform: translateX(-80%);
-  transition: transform 900ms cubic-bezier(0.215, 0.610, 0.355, 1); 
 }
 
 #controles ul:hover {
   transform: translateX(0);
+}
+
+/* Exercício 1: Criar uma transição para quando o mouse estiver em cima dos
+ * botões play/stop (para que o elemento se revele lentamente)
+ */
+ #controles ul {
+  transition: transform 900ms cubic-bezier(0.215, 0.610, 0.355, 1); 
 }
 
 /*
@@ -22,7 +25,7 @@
  */
 .com-fome {
   opacity: 1;
-  animation: piscando 500ms ease-in 0.5s;
+  animation: piscando 2000ms linear 0s;
 }
 
 @keyframes piscando {
@@ -61,24 +64,25 @@
     padding: 0px;
   }
 }
-/*
+
 .com-raiva {
-  animation: pulsando 1s;
+  animation: pulsando 150ms linear 0s infinite alternate;
 }
 
 @keyframes pulsando {
   from {
-    top: 0;
+    transform: scale(1.0);
   }
   to {
-    top: -30px;
+    transform: scale(1.1);
   }
-}*/
-/*
+}
+
 .atacando {
   position: relative;
-  animation: salto 500ms ease-in 0s,
-             cresce 500ms ease-in 0s;
+  animation: salto 400ms linear 0s,
+             vermelhinho 1s ease-in 0s,
+             cresce 500ms ease-in 0s infinite alternate;
 }
 
 @keyframes salto {
@@ -90,13 +94,23 @@
   }
 }
 
-@keyframes cresce {
+
+@keyframes vermelhinho {
   from {
-    padding: 10px;
     border: 2px silver solid;
+    padding: 10px;
   }
   to {
-    padding: 0px;
     border: 10px red solid;
+    padding: 0px;
   }
-}*/
+}
+
+@keyframes cresce {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
